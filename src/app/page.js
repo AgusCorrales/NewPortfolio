@@ -1,4 +1,4 @@
-import {Portfolio} from '.src/components/Portfolio'
+import {Portfolio} from '@/components/component/Portfolio'
 
 
 const Home = () => {
