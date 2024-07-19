@@ -22,7 +22,7 @@ export function Portfolio() {
       <div className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <BriefcaseIcon className="w-6 h-6" />
-          <h1 className="text-2xl font-bold">Hola, soy Agustin</h1>
+          <h1 className="text-2xl font-bold">Hola, soy Agustín</h1>
         </div>
         <nav className="hidden md:flex items-center gap-4">
           <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false}>
