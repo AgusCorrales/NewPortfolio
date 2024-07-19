@@ -124,7 +124,7 @@ export function Portfolio() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="mb-2">Proyecto 2</CardTitle>
+                  <CardTitle className="mb-2">Ecomerce</CardTitle>
                   <CardDescription>Proyecto que trata de una página Ecomerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como usuario puedes visitar la página, crear usuarios y comprar.</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -150,7 +150,7 @@ export function Portfolio() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="mb-2">Proyecto 3</CardTitle>
+                  <CardTitle className="mb-2">Trivia Game</CardTitle>
                   <CardDescription>Un juego de trivia que consiste en diez preguntas sobre videojuegos. Las preguntas y respuestas son traidas de una API. Tambien cuenta con un registro de usuarios, un login y una puntuacion final.
                   </CardDescription>
                 </CardHeader>
@@ -177,7 +177,7 @@ export function Portfolio() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="mb-2">Proyecto 4</CardTitle>
+                  <CardTitle className="mb-2">E-learging Experience</CardTitle>
                   <CardDescription>Proyecto para el cliente Samoo by Pentec con el fin de mejorar el networking entre asistentes a los eventos realizados por la empresa. Hecho con un equipo de 12 personas, incluyendo desarrolladores Full Stack, UX/UI Designers y Data Science.</CardDescription>
                 </CardHeader>
                 <CardContent>
