@@ -183,7 +183,7 @@ export function Portfolio() {
                 <CardContent>
                   <Image
                     src="/E-learning.png"
-                    width="500"
+                    width="300"
                     height="300"
                     alt="Imagen del proyecto 4"
                     className="rounded-t-lg" />
