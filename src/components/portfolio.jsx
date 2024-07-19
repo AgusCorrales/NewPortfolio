@@ -1,46 +1,76 @@
+"use client";
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import Image from 'next/image';
+import { GithubIcon, LinkedinIcon } from "lucide-react";
+import { useState } from "react";
 
 
 
 export function Portfolio() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     (<div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
-        <div
-          className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BriefcaseIcon className="w-6 h-6" />
-            <h1 className="text-2xl font-bold">Agustin Corrales Zarate</h1>
-          </div>
-          <nav className="hidden md:flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Sobre mí
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Proyectos
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Educación
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Habilidades
-            </Link>
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Contacto
-            </Link>
-          </nav>
-          <Button variant="outline" size="sm" className="md:hidden">
-            <MenuIcon className="w-5 h-5" />
-            <span className="sr-only">Abrir menú</span>
-          </Button>
+        <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+      <div className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <BriefcaseIcon className="w-6 h-6" />
+          <h1 className="text-2xl font-bold">Hola, soy Agustin</h1>
         </div>
-      </header>
+        <nav className="hidden md:flex items-center gap-4">
+          <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false}>
+            Sobre mí
+          </Link>
+          <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false}>
+            Proyectos
+          </Link>
+          <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false}>
+            Educación
+          </Link>
+          <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false}>
+            Habilidades
+          </Link>
+          <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false}>
+            Contacto
+          </Link>
+        </nav>
+        <Button variant="outline" size="sm" className="md:hidden" onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <XIcon className="w-5 h-5" />
+          ) : (
+            <MenuIcon className="w-5 h-5" />
+          )}
+          <span className="sr-only">{isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
+        </Button>
+      </div>
+      {/* Menú móvil */}
+      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 w-full bg-background/90 backdrop-blur-sm`}>
+        <nav className="flex flex-col items-center gap-4 py-4">
+          <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+            Sobre mí
+          </Link>
+          <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+            Proyectos
+          </Link>
+          <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+            Educación
+          </Link>
+          <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+            Habilidades
+          </Link>
+          <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+            Contacto
+          </Link>
+        </nav>
+      </div>
+    </header>
       <main className="flex-1">
         <section id="about" className="py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8">
@@ -73,7 +103,7 @@ export function Portfolio() {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src= "/Tesla.png"
+                    src="/Tesla.png"
                     width="500"
                     height="300"
                     alt="Imagen del proyecto 1"
@@ -81,7 +111,7 @@ export function Portfolio() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="https://github.com/AgusCorrales/MiniProyectoReact" className="text-sm font-medium hover:underline" prefetch={false}>
                       Ver proyecto
                     </Link>
                     <Separator orientation="vertical" className="h-4" />
@@ -94,8 +124,8 @@ export function Portfolio() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Proyecto 2</CardTitle>
-                  <CardDescription>Descripción del proyecto 2</CardDescription>
+                  <CardTitle className="mb-2">Proyecto 2</CardTitle>
+                  <CardDescription>Proyecto que trata de una página Ecomerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como usuario puedes visitar la página, crear usuarios y comprar.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
@@ -107,7 +137,7 @@ export function Portfolio() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="https://github.com/AgusCorrales/ProyectoReactEcomerce" className="text-sm font-medium hover:underline" prefetch={false}>
                       Ver proyecto
                     </Link>
                     <Separator orientation="vertical" className="h-4" />
@@ -120,8 +150,9 @@ export function Portfolio() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Proyecto 3</CardTitle>
-                  <CardDescription>Descripción del proyecto 3</CardDescription>
+                  <CardTitle className="mb-2">Proyecto 3</CardTitle>
+                  <CardDescription>Un juego de trivia que consiste en diez preguntas sobre videojuegos. Las preguntas y respuestas son traidas de una API. Tambien cuenta con un registro de usuarios, un login y una puntuacion final.
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
@@ -133,7 +164,7 @@ export function Portfolio() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="https://github.com/AgusCorrales/ProyectoQuiz" className="text-sm font-medium hover:underline" prefetch={false}>
                       Ver proyecto
                     </Link>
                     <Separator orientation="vertical" className="h-4" />
@@ -147,11 +178,11 @@ export function Portfolio() {
               <Card>
                 <CardHeader>
                   <CardTitle className="mb-2">Proyecto 4</CardTitle>
-                  <CardDescription>Descripción del proyecto 4</CardDescription>
+                  <CardDescription>Proyecto para el cliente Samoo by Pentec con el fin de mejorar el networking entre asistentes a los eventos realizados por la empresa. Hecho con un equipo de 12 personas, incluyendo desarrolladores Full Stack, UX/UI Designers y Data Science.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/E-learging2.png" 
+                    src="/E-learging2.png"
                     width="150"
                     height="225"
                     alt="Imagen del proyecto 4"
@@ -159,7 +190,7 @@ export function Portfolio() {
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
-                    <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="https://github.com/sentobc13/Front-Proyecto-Final-Tripulaciones" className="text-sm font-medium hover:underline" prefetch={false}>
                       Ver proyecto
                     </Link>
                     <Separator orientation="vertical" className="h-4" />
@@ -263,7 +294,9 @@ export function Portfolio() {
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-2">
                       <MailIcon className="w-5 h-5 text-muted-foreground" />
-                      <span>aguscorrales1997@gmail.com</span>
+                      <a href="mailto:aguscorrales1997@gmail.com" className="hover:underline">
+                        aguscorrales1997@gmail.com
+                      </a>
                     </div>
                     <div className="flex items-center gap-2">
                       <PhoneIcon className="w-5 h-5 text-muted-foreground" />
@@ -274,9 +307,15 @@ export function Portfolio() {
                       <span>Valencia, España</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <LinkIcon className="w-5 h-5 text-muted-foreground" />
-                      <Link href="#" className="hover:underline" prefetch={false}>
-                      www.linkedin.com/in/agustincorraleszarate
+                      <LinkedinIcon className="w-5 h-5 text-muted-foreground" />
+                      <Link href="https://www.linkedin.com/in/agustincorraleszarate/" className="hover:underline" prefetch={false}>
+                        Linkedin
+                      </Link>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <GithubIcon className="w-5 h-5 text-muted-foreground" />
+                      <Link href="https://github.com/AgusCorrales" className="hover:underline" prefetch={false}>
+                        Github
                       </Link>
                     </div>
                   </div>
@@ -291,11 +330,11 @@ export function Portfolio() {
           className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <p className="text-sm text-muted-foreground">&copy; 2024 Agustin Corrales Zarate. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Gracias por visitar!
+            <Link href="https://www.linkedin.com/in/agustincorraleszarate/" className="text-sm font-medium hover:underline" prefetch={false}>
+            <LinkedinIcon className="w-5 h-5 text-muted-foreground" />
             </Link>
-            <Link href="#" className="text-sm font-medium hover:underline" prefetch={false}>
-              Github.com/AgusCorrales
+            <Link href="https://github.com/AgusCorrales" className="text-sm font-medium hover:underline" prefetch={false}>
+            <GithubIcon className="w-5 h-5 text-muted-foreground" />
             </Link>
           </div>
         </div>
