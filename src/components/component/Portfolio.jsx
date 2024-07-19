@@ -107,7 +107,7 @@ export function Portfolio() {
                     width="500"
                     height="300"
                     alt="Imagen del proyecto 1"
-                    className="rounded-t-lg" />
+                    className="rounded-t-lg mt-10" />
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export function Portfolio() {
                     width="500"
                     height="300"
                     alt="Imagen del proyecto 2"
-                    className="rounded-t-lg" />
+                    className="rounded-t-lg mt-10" />
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
@@ -160,7 +160,7 @@ export function Portfolio() {
                     width="500"
                     height="300"
                     alt="Imagen del proyecto 3"
-                    className="rounded-t-lg" />
+                    className="rounded-t-lg mt-10" />
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
@@ -182,9 +182,9 @@ export function Portfolio() {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/E-learging2.png"
-                    width="150"
-                    height="225"
+                    src="/E-learning.png"
+                    width="500"
+                    height="300"
                     alt="Imagen del proyecto 4"
                     className="rounded-t-lg" />
                 </CardContent>
