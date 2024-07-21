@@ -211,6 +211,18 @@ export function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
+                  <CardTitle className="text-lg font-bold md:text-xl">Bootcamp Full Stack Developer</CardTitle>
+                  <CardDescription>The Birdge</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CalendarDaysIcon className="w-4 h-4" />
+                    <span>2024</span>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
                   <CardTitle className="text-lg font-bold md:text-xl">Curso Frontend Developer</CardTitle>
                   <CardDescription>CoderHouse</CardDescription>
                 </CardHeader>
@@ -218,18 +230,6 @@ export function Portfolio() {
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDaysIcon className="w-4 h-4" />
                     <span>2018</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg font-bold md:text-xl">Bootcamp Full Stack Developer </CardTitle>
-                  <CardDescription>The Bridge</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CalendarDaysIcon className="w-4 h-4" />
-                    <span>2024</span>
                   </div>
                 </CardContent>
               </Card>
