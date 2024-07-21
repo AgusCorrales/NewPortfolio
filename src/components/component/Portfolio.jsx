@@ -18,59 +18,59 @@ export function Portfolio() {
   };
   return (
     (<div className="flex flex-col min-h-screen bg-background text-foreground">
-        <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
-      <div className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <BriefcaseIcon className="w-6 h-6" />
-          <h1 className="text-2xl font-bold">Hola, soy Agustín</h1>
+      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+        <div className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BriefcaseIcon className="w-6 h-6" />
+            <h1 className="text-2xl font-bold">Hola, soy Agustín</h1>
+          </div>
+          <nav className="hidden md:flex items-center gap-4">
+            <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false}>
+              Sobre mí
+            </Link>
+            <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false}>
+              Proyectos
+            </Link>
+            <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false}>
+              Educación
+            </Link>
+            <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false}>
+              Habilidades
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false}>
+              Contacto
+            </Link>
+          </nav>
+          <Button variant="outline" size="sm" className="md:hidden" onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <XIcon className="w-5 h-5" />
+            ) : (
+              <MenuIcon className="w-5 h-5" />
+            )}
+            <span className="sr-only">{isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
+          </Button>
         </div>
-        <nav className="hidden md:flex items-center gap-4">
-          <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false}>
-            Sobre mí
-          </Link>
-          <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false}>
-            Proyectos
-          </Link>
-          <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false}>
-            Educación
-          </Link>
-          <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false}>
-            Habilidades
-          </Link>
-          <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false}>
-            Contacto
-          </Link>
-        </nav>
-        <Button variant="outline" size="sm" className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? (
-            <XIcon className="w-5 h-5" />
-          ) : (
-            <MenuIcon className="w-5 h-5" />
-          )}
-          <span className="sr-only">{isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
-        </Button>
-      </div>
-      {/* Menú móvil */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 w-full bg-background/90 backdrop-blur-sm`}>
-        <nav className="flex flex-col items-center gap-4 py-4">
-          <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
-            Sobre mí
-          </Link>
-          <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
-            Proyectos
-          </Link>
-          <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
-            Educación
-          </Link>
-          <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
-            Habilidades
-          </Link>
-          <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
-            Contacto
-          </Link>
-        </nav>
-      </div>
-    </header>
+        {/* Menú móvil */}
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 w-full bg-background/90 backdrop-blur-sm`}>
+          <nav className="flex flex-col items-center gap-4 py-4">
+            <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+              Sobre mí
+            </Link>
+            <Link href="#projects" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+              Proyectos
+            </Link>
+            <Link href="#education" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+              Educación
+            </Link>
+            <Link href="#skills" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+              Habilidades
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
+              Contacto
+            </Link>
+          </nav>
+        </div>
+      </header>
       <main className="flex-1">
         <section id="about" className="py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8">
@@ -98,34 +98,34 @@ export function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="mb-2">Pagina Tesla</CardTitle>
-                  <CardDescription>Es un pequeño proyecto que trata de una página sobre Tesla, con imágenes y noticias sobre la marca. También con un pequeño formulario para publicar las noticias que desees</CardDescription>
+                  <CardTitle className="mb-2">E-learning Experience</CardTitle>
+                  <CardDescription>Proyecto para el cliente Samoo by Pentec con el fin de mejorar el networking entre asistentes a los eventos realizados por la empresa. Hecho con un equipo de 12 personas, incluyendo desarrolladores Full Stack, UX/UI Designers y Data Science.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/Tesla.png"
+                    src="/E-learning.png"
                     width="500"
-                    height="300"
-                    alt="Imagen del proyecto 1"
-                    className="rounded-t-lg mt-10" />
+                    height="500"
+                    alt="Imagen del proyecto 4"
+                    className="rounded-t-lg" />
                 </CardContent>
                 <CardFooter>
                   <div className="flex items-center gap-2">
-                    <Link href="https://github.com/AgusCorrales/MiniProyectoReact" className="text-sm font-medium hover:underline" prefetch={false}>
+                    <Link href="https://github.com/sentobc13/Front-Proyecto-Final-Tripulaciones" className="text-sm font-medium hover:underline" prefetch={false}>
                       Ver proyecto
                     </Link>
                     <Separator orientation="vertical" className="h-4" />
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <CalendarDaysIcon className="w-4 h-4" />
-                      <span>Marzo 2023</span>
+                      <span>Julio 2024</span>
                     </div>
                   </div>
                 </CardFooter>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="mb-2">Ecomerce</CardTitle>
-                  <CardDescription>Proyecto que trata de una página Ecomerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como usuario puedes visitar la página, crear usuarios y comprar.</CardDescription>
+                  <CardTitle className="mb-2">E-comerce</CardTitle>
+                  <CardDescription>Proyecto que trata de una página E-comerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como usuario puedes visitar la página, crear usuarios y comprar.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
@@ -143,7 +143,33 @@ export function Portfolio() {
                     <Separator orientation="vertical" className="h-4" />
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <CalendarDaysIcon className="w-4 h-4" />
-                      <span>Junio 2022</span>
+                      <span>Junio 2024</span>
+                    </div>
+                  </div>
+                </CardFooter>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="mb-2">Pagina Tesla</CardTitle>
+                  <CardDescription>Proyecto que trata de una página sobre Tesla, con imágenes y un apartado para leer noticias sobre la marca. También con un formulario para publicar las noticias que desees</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Image
+                    src="/Tesla.png"
+                    width="500"
+                    height="300"
+                    alt="Imagen del proyecto 1"
+                    className="rounded-t-lg mt-10" />
+                </CardContent>
+                <CardFooter>
+                  <div className="flex items-center gap-2">
+                    <Link href="https://github.com/AgusCorrales/MiniProyectoReact" className="text-sm font-medium hover:underline" prefetch={false}>
+                      Ver proyecto
+                    </Link>
+                    <Separator orientation="vertical" className="h-4" />
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <CalendarDaysIcon className="w-4 h-4" />
+                      <span>Mayo 2024</span>
                     </div>
                   </div>
                 </CardFooter>
@@ -170,37 +196,12 @@ export function Portfolio() {
                     <Separator orientation="vertical" className="h-4" />
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <CalendarDaysIcon className="w-4 h-4" />
-                      <span>Septiembre 2021</span>
+                      <span>Abril 2024</span>
                     </div>
                   </div>
                 </CardFooter>
               </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="mb-2">E-learging Experience</CardTitle>
-                  <CardDescription>Proyecto para el cliente Samoo by Pentec con el fin de mejorar el networking entre asistentes a los eventos realizados por la empresa. Hecho con un equipo de 12 personas, incluyendo desarrolladores Full Stack, UX/UI Designers y Data Science.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Image
-                    src="/E-learning.png"
-                    width="300"
-                    height="300"
-                    alt="Imagen del proyecto 4"
-                    className="rounded-t-lg" />
-                </CardContent>
-                <CardFooter>
-                  <div className="flex items-center gap-2">
-                    <Link href="https://github.com/sentobc13/Front-Proyecto-Final-Tripulaciones" className="text-sm font-medium hover:underline" prefetch={false}>
-                      Ver proyecto
-                    </Link>
-                    <Separator orientation="vertical" className="h-4" />
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <CalendarDaysIcon className="w-4 h-4" />
-                      <span>Diciembre 2020</span>
-                    </div>
-                  </div>
-                </CardFooter>
-              </Card>
+
             </div>
           </div>
         </section>
@@ -210,25 +211,25 @@ export function Portfolio() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold md:text-xl">Licenciatura en Ingeniería de Software</CardTitle>
-                  <CardDescription>Universidad Tecnológica de México</CardDescription>
+                  <CardTitle className="text-lg font-bold md:text-xl">Curso Frontend Developer</CardTitle>
+                  <CardDescription>CoderHouse</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDaysIcon className="w-4 h-4" />
-                    <span>2015 - 2019</span>
+                    <span>2018</span>
                   </div>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg font-bold md:text-xl">Curso de Desarrollo Web Full-Stack</CardTitle>
-                  <CardDescription>Platzi</CardDescription>
+                  <CardTitle className="text-lg font-bold md:text-xl">Bootcamp Full Stack Developer </CardTitle>
+                  <CardDescription>The Bridge</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CalendarDaysIcon className="w-4 h-4" />
-                    <span>2020 - 2021</span>
+                    <span>2024</span>
                   </div>
                 </CardContent>
               </Card>
@@ -250,6 +251,14 @@ export function Portfolio() {
               <div className="flex flex-col items-center gap-2">
                 <CodepenIcon className="w-8 h-8" />
                 <span className="text-sm font-medium">React</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <CodepenIcon className="w-8 h-8" />
+                <span className="text-sm font-medium">Vue</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <CodepenIcon className="w-8 h-8" />
+                <span className="text-sm font-medium">Angular</span>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <CodepenIcon className="w-8 h-8" />
@@ -331,10 +340,10 @@ export function Portfolio() {
           <p className="text-sm text-muted-foreground">&copy; 2024 Agustin Corrales Zarate. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
             <Link href="https://www.linkedin.com/in/agustincorraleszarate/" className="text-sm font-medium hover:underline" prefetch={false}>
-            <LinkedinIcon className="w-5 h-5 text-muted-foreground" />
+              <LinkedinIcon className="w-5 h-5 text-muted-foreground" />
             </Link>
             <Link href="https://github.com/AgusCorrales" className="text-sm font-medium hover:underline" prefetch={false}>
-            <GithubIcon className="w-5 h-5 text-muted-foreground" />
+              <GithubIcon className="w-5 h-5 text-muted-foreground" />
             </Link>
           </div>
         </div>
