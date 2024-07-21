@@ -19,7 +19,7 @@ export function Portfolio() {
 
   return (
     (<div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto py-4 px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BriefcaseIcon className="w-6 h-6" />
@@ -52,7 +52,7 @@ export function Portfolio() {
           </Button>
         </div>
         {/* Menú móvil */}
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 w-full bg-background/90 backdrop-blur-sm`}>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-0 w-full bg-background/90 backdrop-blur-sm`} style={{ backgroundColor: '#f5f5f5', backdropFilter: 'blur(10px)' }}>
           <nav className="flex flex-col items-center gap-4 py-4">
             <Link href="#about" className="text-sm font-medium hover:underline" prefetch={false} onClick={toggleMenu}>
               Sobre mí
@@ -78,9 +78,9 @@ export function Portfolio() {
             <div>
               <h2 className="text-3xl font-bold mb-4">Sobre mí</h2>
               <p className="text-muted-foreground">
-                Soy un desarrollador web apasionado con experiencia en el diseño y desarrollo de aplicaciones web
-                utilizando tecnologías modernas. Me enfoco en crear soluciones escalables y eficientes que mejoren la
-                experiencia del usuario.
+              <p>Soy un desarrollador web con una profunda pasión por el diseño y desarrollo, utilizando tecnologías avanzadas.</p>
+              <p>Mi enfoque se centra en la creación de soluciones escalables y eficientes, con el objetivo de optimizar la experiencia del usuario.</p> 
+              <p>Cuento con experiencia en una amplia gama de herramientas y metodologías modernas, lo que me permite ofrecer resultados de alta calidad y satisfacer las necesidades cambiantes del mercado.</p>
               </p>
               
             </div>
@@ -135,7 +135,7 @@ export function Portfolio() {
               <Card>
                 <CardHeader>
                   <CardTitle className="mb-2">E-comerce</CardTitle>
-                  <CardDescription>Proyecto que trata de una página E-comerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como usuario puedes visitar la página, crear usuarios y comprar.</CardDescription>
+                  <CardDescription>Proyecto que trata de una página E-comerce, con Frontend y Backend. Puedes publicar productos, actualizarlos, borrarlos, etc. Y como cliente puedes visitar la página, crear usuarios y comprar.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
@@ -187,7 +187,7 @@ export function Portfolio() {
               <Card>
                 <CardHeader>
                   <CardTitle className="mb-2">Trivia Game</CardTitle>
-                  <CardDescription>Un juego de trivia que consiste en diez preguntas sobre videojuegos. Las preguntas y respuestas son traidas de una API. Tambien cuenta con un registro de usuarios, un login y una puntuacion final.
+                  <CardDescription>Un juego de trivia que consiste en diez preguntas sobre videojuegos. Las preguntas y respuestas son traidas de una API. También cuenta con un registro de usuarios, un login y una puntuación final.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
