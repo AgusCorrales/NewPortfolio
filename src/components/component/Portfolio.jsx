@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
@@ -7,6 +6,7 @@ import { Separator } from "@/components/ui/separator"
 import Image from 'next/image';
 import { GithubIcon, LinkedinIcon } from "lucide-react";
 import { useState } from "react";
+import "./Portfolio.css"
 
 
 
@@ -16,6 +16,7 @@ export function Portfolio() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
     (<div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
@@ -81,6 +82,7 @@ export function Portfolio() {
                 utilizando tecnologías modernas. Me enfoco en crear soluciones escalables y eficientes que mejoren la
                 experiencia del usuario.
               </p>
+              
             </div>
             <div className="flex justify-center">
               <img
@@ -90,6 +92,14 @@ export function Portfolio() {
                 alt="Foto de perfil"
                 className="rounded-full" />
             </div>
+            <div>
+                <a href="/Cv.pdf" download="Cv-Agustin-Corrales-Zarate.pdf" className="download-button">
+                  <button class="btn">
+                    <span class="btn-text-one">Descarga Cv</span>
+                    <span class="btn-text-two">Gracias</span>
+                  </button>
+                </a>
+              </div>
           </div>
         </section>
         <section id="projects" className="py-16 md:py-24 bg-muted">
