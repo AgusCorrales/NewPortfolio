@@ -85,8 +85,8 @@ export function Portfolio() {
               
             </div>
             <div className="flex justify-center">
-              <img
-                src="/placeholder.svg"
+              <Image
+                src="/avatar.png"
                 width="300"
                 height="300"
                 alt="Foto de perfil"
