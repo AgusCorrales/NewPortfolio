@@ -93,7 +93,7 @@ export function Portfolio() {
                 className="rounded-full" />
             </div>
             <div>
-                <a href="/Cv.pdf" download="Cv-Agustin-Corrales-Zarate.pdf" className="download-button">
+                <a href="/CvAgustinCorrales.pdf" download="Cv-Agustin-Corrales-Zarate.pdf" className="download-button">
                   <button class="btn">
                     <span class="btn-text-one">Descarga Cv</span>
                     <span class="btn-text-two">Gracias</span>
